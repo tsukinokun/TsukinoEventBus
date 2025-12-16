@@ -112,8 +112,6 @@ g++ -std=c++17 -I/path/to/TsukinoEventBus/include your\_code.cpp -o your\_progra
 
 このライブラリは [MIT License](./LICENSE) の下で公開されています。
 
-
-### MIT License 
-
-このライブラリは [MIT License](./LICENSE) の下で公開されています。
+## Documentation
+- [解説記事(Qiita)](https://qiita.com/tsukino_/items/58d449d52fb9acaac2d)
 

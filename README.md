@@ -1,84 +1,42 @@
 # TsukinoEventBus
-
-
-
 TsukinoEventBus は C++17 向けの軽量イベントバスライブラリです。  
-
 RAII による安全な購読管理、優先度制御、継承対応、コールバック更新などをサポートしています。  
-
 初心者にも安心して使えるよう、シンプルで明快な API 設計を心がけています。
 
-
-
 ## 🚀 Quick Start
-
-
-
 最小限のコードで TsukinoEventBus を使う例です。
 
-
-
 ```cpp
-
-\#include "TsukinoEventBus/TsukinoEventBus.hpp"
-
-\#include <iostream>
-
-
+#include "TsukinoEventBus/TsukinoEventBus.hpp"
+#include <iostream>
 
 // イベントクラスの定義
-
 class HelloEvent : public TsukinoEventBus::BaseEvent {
-
 public:
-
-&nbsp;   std::string message;
-
-&nbsp;   explicit HelloEvent(const std::string\& msg) : message(msg) {}
-
+   std::string message;
+   explicit HelloEvent(const std::string\& msg) : message(msg) {}
 };
 
 
 
 int main() {
+   TsukinoEventBus::EventBus bus;
+   // 購読者を登録
+   auto handle = bus.subscribe<HelloEvent>(
+      \[](const HelloEvent\& e) {
+         std::cout << "Received: " << e.message << std::endl;
+      },
+       1
+   );
 
-&nbsp;   TsukinoEventBus::EventBus bus;
-
-
-
-&nbsp;   // 購読者を登録
-
-&nbsp;   auto handle = bus.subscribe<HelloEvent>(
-
-&nbsp;       \[](const HelloEvent\& e) {
-
-&nbsp;           std::cout << "Received: " << e.message << std::endl;
-
-&nbsp;       },
-
-&nbsp;       1
-
-&nbsp;   );
-
-
-
-&nbsp;   // イベントを発行
-
-&nbsp;   bus.publish(HelloEvent("Hello EventBus!"));
-
+   // イベントを発行
+   bus.publish(HelloEvent("Hello EventBus!"));
 }
-
 ```
 
 ```bash
-
 Received: Hello EventBus!
-
 ```
-
-
-
-
 
 ## 🔧 ビルド方法
 ### g++ を使う場合
@@ -148,6 +106,11 @@ g++ -std=c++17 -I/path/to/TsukinoEventBus/include your\_code.cpp -o your\_progra
 
 自由に利用・改変・再配布が可能ですが、ライセンス文書のコピーを必ず含めてください。
 
+
+
+### MIT License 
+
+このライブラリは [MIT License](./LICENSE) の下で公開されています。
 
 
 ### MIT License 

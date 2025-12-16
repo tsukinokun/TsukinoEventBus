@@ -42,23 +42,23 @@ public:
 
 int main() {
 
-&nbsp;   TsukinoEventBus::EventBus bus;
+   TsukinoEventBus::EventBus bus;
 
 
 
-&nbsp;   // 購読者を登録
+   // 購読者を登録
 
-&nbsp;   auto handle = bus.subscribe<HelloEvent>(
+   auto handle = bus.subscribe<HelloEvent>(
 
-&nbsp;       \[](const HelloEvent\& e) {
+       \[](const HelloEvent\& e) {
 
-&nbsp;           std::cout << "Received: " << e.message << std::endl;
+           std::cout << "Received: " << e.message << std::endl;
 
-&nbsp;       },
+       },
 
-&nbsp;       1
+       1
 
-&nbsp;   );
+   );
 
 
 

@@ -1,6 +1,14 @@
-# TsukinoEventBus
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![C++17](https://img.shields.io/badge/C++-17-blue.svg)
+<p align="center">
+  <img src="Image/logo.png" width="150" alt="TsukinoEventBus Logo">
+</p>
+
+<h1 align="center">TsukinoEventBus</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+  <img src="https://img.shields.io/badge/C++-17-blue.svg" alt="C++17">
+</p>
+
 TsukinoEventBus は C++17 向けの軽量イベントバスライブラリです。  
 RAII による安全な購読管理、優先度制御、継承対応、コールバック更新などをサポートしています。  
 初心者にも安心して使えるよう、シンプルで明快な API 設計を心がけています。

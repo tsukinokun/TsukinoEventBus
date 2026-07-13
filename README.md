@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Image/logo.png" width="150" alt="TsukinoEventBus Logo">
+  <img src="Image/logo.png" alt="TsukinoEventBus Logo">
 </p>
 
 <h1 align="center">TsukinoEventBus</h1>
